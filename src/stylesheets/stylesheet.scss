@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-cyan: hsl(185, 75%, 39%);
+$dark-gray: hsl(0, 0%, 59%);
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: $dark-cyan;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/images/bg-pattern-bottom.svg");
+    transform: rotate(20deg);
+  }
+}
+
+.profile-card {
+  height: 375px;
+  width: 350px;
+  border-radius: 20px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 85px;
+
+  @media screen and (max-width: 450px) {
+    width: 325px;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 96vw;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 140px;
+    background: url("../assets/images/bg-pattern-card.svg");
+    z-index: -1;
+  }
+
+  img {
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+  }
+
+  h2 {
+    padding-top: 25px;
+    color: $very-dark-desaturated-blue;
+
+     span {
+       font-weight: 400;
+       color: $dark-grayish-blue;
+     }
+  }
+
+  .location {
+    padding-top: 15px;
+    color: $dark-grayish-blue;
+    font-size: 0.9rem;
+  }
+
+  .counters {
+    width: 100%;
+    height: 90px;
+    margin-top: 28px;
+    border-top: 1px solid rgba($dark-gray, .4);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .counter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .count {
+        font-weight: 700;
+        color: $very-dark-desaturated-blue;
+      }
+
+      .description {
+        padding-top: 10px;
+        font-size: 0.7rem;
+        color: $dark-grayish-blue;
+      }
+    }
+  }
+}
